@@ -50,6 +50,8 @@ class GradientProgressView: UIView {
         clipsToBounds = true
     }
     
+    // MARK: State
+    
     func update() {
         self.setNeedsDisplay()
     }
