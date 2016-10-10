@@ -46,6 +46,8 @@ class GradientProgressView: UIView {
         
         backgroundColor = UIColor.clearColor()
         layer.borderWidth = 1
+        
+        clipsToBounds = true
     }
     
     func update() {
@@ -55,13 +57,21 @@ class GradientProgressView: UIView {
     // MARK: View
     
     override func drawRect(rect: CGRect) {
-        layer.borderColor = state.borderColor.CGColor
-        layer.cornerRadius = rect.height / 2
-        
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
         
+        drawProgressBackground(context, inRect: rect)
         
+        layer.borderColor = state.borderColor.CGColor
+        layer.cornerRadius = rect.height / 2
+    }
+    
+    // MARK: View Helpers
+    
+    private func drawProgressBackground(context: CGContext, inRect rect: CGRect) {
+        CGContextSaveGState(context)
+        CGContextSetFillColorWithColor(context, state.backgroundColor.CGColor)
+        CGContextFillRect(context, rect)
     }
 }
