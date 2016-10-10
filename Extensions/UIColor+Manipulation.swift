@@ -14,8 +14,10 @@ extension UIColor {
      Returns a darker version of the receiver.
      */
     func darkerColor() -> UIColor {
+        let delta: CGFloat = 0.85
+        
         if self == UIColor.whiteColor() {
-            return UIColor(white: 0.9, alpha: 1.0)
+            return UIColor(white: delta, alpha: 1.0)
         }
         
         var hue: CGFloat = 0,
@@ -24,7 +26,6 @@ extension UIColor {
         alpha: CGFloat = 0,
         white: CGFloat = 0
         
-        let delta: CGFloat = 0.8
         if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
             return UIColor(hue: hue,
                            saturation: saturation,
