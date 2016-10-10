@@ -71,19 +71,25 @@ class GradientProgressView: UIView {
     }
     
     // MARK: View Helpers
-    
-    private func drawProgressBackground(context: CGContext, inRect rect: CGRect) {
-        CGContextSaveGState(context)
-        
-        // Gradient
+
+    private func drawGradient(baseColor color: UIColor, inRect rect: CGRect, context: CGContext) {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let locations: [CGFloat] = [0.0, 1.0]
-        let colors = [state.backgroundColor.CGColor, state.backgroundColor.darkerColor().CGColor]
+        let colors = [color.CGColor, color.darkerColor().CGColor]
         
         let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
         let startPoint = CGPoint.zero
         let endPoint = CGPoint(x: 0, y: rect.size.height)
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+    }
+
+    private func drawProgressBackground(context: CGContext, inRect rect: CGRect) {
+        CGContextSaveGState(context)
+        
+        // Gradient
+        drawGradient(baseColor: state.backgroundColor,
+                     inRect: rect,
+                     context: context)
         
         CGContextRestoreGState(context)
     }
@@ -96,14 +102,9 @@ class GradientProgressView: UIView {
         CGContextClip(context)
 
         // Gradient
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let locations: [CGFloat] = [0.0, 1.0]
-        let colors = [state.progressColor.CGColor, state.progressColor.darkerColor().CGColor]
-        
-        let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
-        let startPoint = CGPoint.zero
-        let endPoint = CGPoint(x: 0, y: rect.size.height)
-        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+        drawGradient(baseColor: state.progressColor,
+                     inRect: rectToDrawIn,
+                     context: context)
         
         CGContextRestoreGState(context)
     }
