@@ -41,6 +41,9 @@ class GradientProgressView: UIView {
     }
     
     private func initialize() {
+        // Will trigger a setNeedsDisplay whenever bounds changes (i.e. orientation change)
+        contentMode = .Redraw
+        
         backgroundColor = UIColor.clearColor()
         layer.borderWidth = 1
     }
