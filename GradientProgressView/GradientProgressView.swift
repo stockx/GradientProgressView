@@ -71,7 +71,17 @@ class GradientProgressView: UIView {
     
     private func drawProgressBackground(context: CGContext, inRect rect: CGRect) {
         CGContextSaveGState(context)
-        CGContextSetFillColorWithColor(context, state.backgroundColor.CGColor)
-        CGContextFillRect(context, rect)
+        
+        // Gradient
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let locations: [CGFloat] = [0.0, 1.0]
+        let colors = [state.backgroundColor.CGColor, state.backgroundColor.darkerColor().CGColor]
+        
+        let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
+        let startPoint = CGPoint.zero
+        let endPoint = CGPoint(x: 0, y: rect.size.height)
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+        
+        CGContextRestoreGState(context)
     }
 }
