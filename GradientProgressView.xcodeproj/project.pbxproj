@@ -13,6 +13,7 @@
 		0214485B1DAC08890050EE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0214485A1DAC08890050EE4F /* Assets.xcassets */; };
 		0214485E1DAC08890050EE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0214485C1DAC08890050EE4F /* LaunchScreen.storyboard */; };
 		021448691DAC08890050EE4F /* GradientProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021448681DAC08890050EE4F /* GradientProgressViewTests.swift */; };
+		021448761DAC08F30050EE4F /* GradientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021448751DAC08F30050EE4F /* GradientProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		021448641DAC08890050EE4F /* GradientProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		021448681DAC08890050EE4F /* GradientProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressViewTests.swift; sourceTree = "<group>"; };
 		0214486A1DAC08890050EE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021448751DAC08F30050EE4F /* GradientProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				0214485A1DAC08890050EE4F /* Assets.xcassets */,
 				0214485C1DAC08890050EE4F /* LaunchScreen.storyboard */,
 				0214485F1DAC08890050EE4F /* Info.plist */,
+				021448751DAC08F30050EE4F /* GradientProgressView.swift */,
 			);
 			path = GradientProgressView;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				021448561DAC08890050EE4F /* ViewController.swift in Sources */,
+				021448761DAC08F30050EE4F /* GradientProgressView.swift in Sources */,
 				021448541DAC08890050EE4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
