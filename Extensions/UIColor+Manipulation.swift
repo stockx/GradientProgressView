@@ -13,7 +13,7 @@ extension UIColor {
     /**
      Returns a darker version of the receiver.
      */
-    func darkerColor() -> UIColor? {
+    func darkerColor() -> UIColor {
         if self == UIColor.whiteColor() {
             return UIColor(white: 0.9, alpha: 1.0)
         }
@@ -24,17 +24,18 @@ extension UIColor {
         alpha: CGFloat = 0,
         white: CGFloat = 0
         
+        let delta: CGFloat = 0.8
         if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
             return UIColor(hue: hue,
                            saturation: saturation,
-                           brightness: brightness * 0.9,
+                           brightness: brightness * delta,
                            alpha: alpha)
         }
         else if getWhite(&white, alpha: &alpha) {
-            return UIColor(white: max(white * 0.9, 0.0), alpha: alpha)
+            return UIColor(white: max(white * delta, 0.0), alpha: alpha)
         }
         else {
-            return nil
+            return UIColor.blackColor()
         }
     }
 }
