@@ -62,6 +62,9 @@ class GradientProgressView: UIView {
         }
         
         drawProgressBackground(context, inRect: rect)
+        if state.progress > 0.0 {
+            drawProgress(context, inRect: rect)
+        }
         
         layer.borderColor = state.borderColor.CGColor
         layer.cornerRadius = rect.height / 2
@@ -76,6 +79,26 @@ class GradientProgressView: UIView {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let locations: [CGFloat] = [0.0, 1.0]
         let colors = [state.backgroundColor.CGColor, state.backgroundColor.darkerColor().CGColor]
+        
+        let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
+        let startPoint = CGPoint.zero
+        let endPoint = CGPoint(x: 0, y: rect.size.height)
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+        
+        CGContextRestoreGState(context)
+    }
+    
+    private func drawProgress(context: CGContext, inRect rect: CGRect) {
+        CGContextSaveGState(context)
+
+        let rectToDrawIn = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width * state.progress, height: rect.size.height)
+        CGContextAddRect(context, rectToDrawIn)
+        CGContextClip(context)
+
+        // Gradient
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let locations: [CGFloat] = [0.0, 1.0]
+        let colors = [state.progressColor.CGColor, state.progressColor.darkerColor().CGColor]
         
         let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
         let startPoint = CGPoint.zero
