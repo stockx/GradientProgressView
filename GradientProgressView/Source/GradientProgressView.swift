@@ -8,16 +8,16 @@
 
 import UIKit
 
-class GradientProgressView: UIView {
+public class GradientProgressView: UIView {
     
-    struct State {
-        var progress: CGFloat
-        var progressColor: UIColor
-        var backgroundColor: UIColor
-        var borderColor: UIColor
+    public struct State {
+        public var progress: CGFloat
+        public var progressColor: UIColor
+        public var backgroundColor: UIColor
+        public var borderColor: UIColor
     }
     
-    var state: State = State(progress: 0,
+    public var state: State = State(progress: 0,
                              progressColor: UIColor.blueColor(),
                              backgroundColor: UIColor.whiteColor(),
                              borderColor: UIColor.lightGrayColor()) {
@@ -28,13 +28,13 @@ class GradientProgressView: UIView {
     
     // MARK: Init
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
         update()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
         update()
@@ -58,7 +58,7 @@ class GradientProgressView: UIView {
     
     // MARK: View
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
