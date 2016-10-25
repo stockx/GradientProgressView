@@ -13,8 +13,8 @@
 		0214485B1DAC08890050EE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0214485A1DAC08890050EE4F /* Assets.xcassets */; };
 		0214485E1DAC08890050EE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0214485C1DAC08890050EE4F /* LaunchScreen.storyboard */; };
 		021448691DAC08890050EE4F /* GradientProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021448681DAC08890050EE4F /* GradientProgressViewTests.swift */; };
-		0214487B1DAC1A520050EE4F /* UIColor+Manipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214487A1DAC1A520050EE4F /* UIColor+Manipulation.swift */; };
 		0273BCFD1DBEDB60000C2B3A /* GradientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273BCFC1DBEDB60000C2B3A /* GradientProgressView.swift */; };
+		0273BCFF1DBEDC84000C2B3A /* UIColor+Manipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273BCFE1DBEDC84000C2B3A /* UIColor+Manipulation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		021448641DAC08890050EE4F /* GradientProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		021448681DAC08890050EE4F /* GradientProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressViewTests.swift; sourceTree = "<group>"; };
 		0214486A1DAC08890050EE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0214487A1DAC1A520050EE4F /* UIColor+Manipulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Manipulation.swift"; sourceTree = "<group>"; };
 		0273BCFC1DBEDB60000C2B3A /* GradientProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressView.swift; sourceTree = "<group>"; };
+		0273BCFE1DBEDC84000C2B3A /* UIColor+Manipulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Manipulation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				021448521DAC08890050EE4F /* GradientProgressView */,
-				021448791DAC1A270050EE4F /* Extensions */,
 				021448671DAC08890050EE4F /* GradientProgressViewTests */,
 				021448511DAC08890050EE4F /* Products */,
 			);
@@ -102,17 +101,10 @@
 			path = GradientProgressViewTests;
 			sourceTree = "<group>";
 		};
-		021448791DAC1A270050EE4F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0214487A1DAC1A520050EE4F /* UIColor+Manipulation.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		0273BCFB1DBEDB60000C2B3A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0273BCFE1DBEDC84000C2B3A /* UIColor+Manipulation.swift */,
 				0273BCFC1DBEDB60000C2B3A /* GradientProgressView.swift */,
 			);
 			path = Source;
@@ -220,9 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				021448561DAC08890050EE4F /* ViewController.swift in Sources */,
-				0214487B1DAC1A520050EE4F /* UIColor+Manipulation.swift in Sources */,
 				021448541DAC08890050EE4F /* AppDelegate.swift in Sources */,
 				0273BCFD1DBEDB60000C2B3A /* GradientProgressView.swift in Sources */,
+				0273BCFF1DBEDC84000C2B3A /* UIColor+Manipulation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
