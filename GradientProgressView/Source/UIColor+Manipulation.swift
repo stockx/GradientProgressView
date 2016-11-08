@@ -16,7 +16,7 @@ extension UIColor {
     func darkerColor() -> UIColor {
         let delta: CGFloat = 0.85
         
-        if self == UIColor.whiteColor() {
+        if self == .white {
             return UIColor(white: delta, alpha: 1.0)
         }
         
@@ -36,7 +36,7 @@ extension UIColor {
             return UIColor(white: max(white * delta, 0.0), alpha: alpha)
         }
         else {
-            return UIColor.blackColor()
+            return .black
         }
     }
 }

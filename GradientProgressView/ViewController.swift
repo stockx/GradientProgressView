@@ -21,13 +21,13 @@ class ViewController: UIViewController {
         progressView.state = state
     }
     
-    @IBAction func didTapColorButton(sender: UIButton) {
+    @IBAction func didTapColorButton(_ sender: UIButton) {
         var state = progressView.state
         state.progressColor = sender.backgroundColor!
         progressView.state = state
     }
     
-    @IBAction func progressSliderChanged(sender: UISlider) {
+    @IBAction func progressSliderChanged(_ sender: UISlider) {
         var state = progressView.state
         state.progress = CGFloat(sender.value)
         progressView.state = state
