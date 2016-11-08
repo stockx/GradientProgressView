@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = "GradientProgressView"
-  s.version            = "0.1"
+  s.version            = "0.2"
   s.summary            = "Blah"
   s.homepage           = "Blah"
   s.license            = "MIT"
