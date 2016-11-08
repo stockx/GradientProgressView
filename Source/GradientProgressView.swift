@@ -18,9 +18,9 @@ public class GradientProgressView: UIView {
     }
     
     public var state: State = State(progress: 0,
-                             progressColor: UIColor.blueColor(),
-                             backgroundColor: UIColor.whiteColor(),
-                             borderColor: UIColor.lightGrayColor()) {
+                             progressColor: .blue,
+                             backgroundColor: .white,
+                             borderColor: .lightGray) {
         didSet {
             update()
         }
@@ -40,11 +40,11 @@ public class GradientProgressView: UIView {
         update()
     }
     
-    private func initialize() {
+    fileprivate func initialize() {
         // Will trigger a setNeedsDisplay whenever bounds changes (i.e. orientation change)
-        contentMode = .Redraw
+        contentMode = .redraw
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
         layer.borderWidth = 1
         
         clipsToBounds = true
@@ -58,7 +58,7 @@ public class GradientProgressView: UIView {
     
     // MARK: View
     
-    override public func drawRect(rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -68,46 +68,46 @@ public class GradientProgressView: UIView {
             drawProgress(context, inRect: rect)
         }
         
-        layer.borderColor = state.borderColor.CGColor
+        layer.borderColor = state.borderColor.cgColor
         layer.cornerRadius = rect.height / 2
     }
     
     // MARK: View Helpers
 
-    private func drawGradient(baseColor color: UIColor, inRect rect: CGRect, context: CGContext) {
+    fileprivate func drawGradient(baseColor color: UIColor, inRect rect: CGRect, context: CGContext) {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let locations: [CGFloat] = [0.0, 1.0]
-        let colors = [color.CGColor, color.darkerColor().CGColor]
+        let colors = [color.cgColor, color.darkerColor().cgColor]
         
-        let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
+        let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: locations)
         let startPoint = CGPoint.zero
         let endPoint = CGPoint(x: 0, y: rect.size.height)
-        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+        context.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: 0))
     }
 
-    private func drawProgressBackground(context: CGContext, inRect rect: CGRect) {
-        CGContextSaveGState(context)
+    fileprivate func drawProgressBackground(_ context: CGContext, inRect rect: CGRect) {
+        context.saveGState()
         
         // Gradient
         drawGradient(baseColor: state.backgroundColor,
                      inRect: rect,
                      context: context)
         
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
     
-    private func drawProgress(context: CGContext, inRect rect: CGRect) {
-        CGContextSaveGState(context)
+    fileprivate func drawProgress(_ context: CGContext, inRect rect: CGRect) {
+        context.saveGState()
 
         let rectToDrawIn = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width * state.progress, height: rect.size.height)
-        CGContextAddRect(context, rectToDrawIn)
-        CGContextClip(context)
+        context.addRect(rectToDrawIn)
+        context.clip()
 
         // Gradient
         drawGradient(baseColor: state.progressColor,
                      inRect: rectToDrawIn,
                      context: context)
         
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 }
