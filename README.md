@@ -16,7 +16,6 @@ Description
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Contact](#contact)
 
@@ -83,11 +82,9 @@ gradientProgressView.state = state
 ```
 
 ## License
---------------
 
 `GradientProgressView` is developed by [Josh Sklar](https://www.linkedin.com/in/jrmsklar) at [StockX](https://stockx.com) and is released under the MIT license. See the `LICENSE` file for details.
 
 ## Contact
---------------
 
 You can follow or drop me a line on [my Twitter account](https://twitter.com/jrmsklar). If you find any issues on the project, you can open a ticket. Pull requests are also welcome.
