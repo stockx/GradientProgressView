@@ -56,7 +56,7 @@ $ pod install
 
 ## Usage
 
-`GradientProgressView` is state based. To configure the progress view, simply update the `state` value with whatever values you'd like, and re-set the graidntView's state:
+`GradientProgressView` is state based. To configure the progress view, simply update the `state` value with whatever values you'd like, and re-set the state:
 
 1) First you should set up the `GradientProgressView`:
 
