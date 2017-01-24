@@ -22,7 +22,7 @@ Description
 ## Features
 - [x] Supports AutoLayout.
 - [x] Supports customizing background colors.
-- [x] Supports being created either in code or a Storyboard.
+- [x] Supports being created either in code or Interface Builder.
 
 ## Installation
 
