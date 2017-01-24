@@ -1,9 +1,9 @@
 ![Gradient Progress View Logo](https://cloud.githubusercontent.com/assets/879038/21463490/eac0e8dc-c937-11e6-914c-bd95fd7d289d.png)
 
 ![Swift3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat")
-[![Platform](https://img.shields.io/cocoapods/p/BubbleRankingIndicator.svg?style=flat)](http://cocoapods.org/pods/BubbleRankingIndicator)
-[![Version](https://img.shields.io/cocoapods/v/BubbleRankingIndicator.svg?style=flat)](http://cocoapods.org/pods/BubbleRankingIndicator)
-[![License](https://img.shields.io/cocoapods/l/BubbleRankingIndicator.svg?style=flat)](http://cocoapods.org/pods/BubbleRankingIndicator)
+[![Platform](https://img.shields.io/cocoapods/p/GradientProgressView.svg?style=flat)](http://cocoapods.org/pods/GradientProgressView)
+[![Version](https://img.shields.io/cocoapods/v/GradientProgressView.svg?style=flat)](http://cocoapods.org/pods/GradientProgressView)
+[![License](https://img.shields.io/cocoapods/l/GradientProgressView.svg?style=flat)](http://cocoapods.org/pods/GradientProgressView)
 
 Description
 --------------
